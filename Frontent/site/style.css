@@ -188,3 +188,10 @@ header.shadow #search-icon {
 .btn:hover {
     background: #fd052f;
 }
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
