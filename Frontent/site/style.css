@@ -203,3 +203,8 @@ header.shadow #search-icon {
 .about-text {
     flex: 1 1 21rem;
 }
+
+.about-text span {
+    font-weight: 500;
+    color: var(--main-color);
+}
