@@ -165,3 +165,7 @@ header.shadow #search-icon {
 .home-text h1 {
     font-size: 2.4rem;
 }
+
+.home-text span {
+    color: var(--main-color);
+}
