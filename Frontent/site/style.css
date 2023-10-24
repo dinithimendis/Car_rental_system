@@ -158,4 +158,6 @@ header.shadow #search-icon {
     background-position: center left;
 }
 
-
+.home-text {
+    padding-left: 130px;
+}
