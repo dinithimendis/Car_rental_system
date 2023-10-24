@@ -184,3 +184,7 @@ header.shadow #search-icon {
     color: var(--bg-color);
     font-weight: 400;
 }
+
+.btn:hover {
+    background: #fd052f;
+}
