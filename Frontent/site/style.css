@@ -231,3 +231,10 @@ header.shadow #search-icon {
     font-size: 0.938rem;
     font-weight: 300;
 }
+
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
