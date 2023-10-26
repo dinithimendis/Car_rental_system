@@ -226,3 +226,8 @@ header.shadow #search-icon {
     font-weight: 500;
     color: var(--main-color);
 }
+
+.heading p {
+    font-size: 0.938rem;
+    font-weight: 300;
+}
