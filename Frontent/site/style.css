@@ -247,3 +247,10 @@ header.shadow #search-icon {
     overflow: hidden;
 }
 
+.cars-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
