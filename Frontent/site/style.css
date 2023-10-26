@@ -238,3 +238,11 @@ header.shadow #search-icon {
     gap: 2rem;
     margin-top: 2rem;
 }
+
+.cars-container .box {
+    flex: 1 1 17rem;
+    position: relative;
+    height: 200px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
