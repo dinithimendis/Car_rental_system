@@ -217,3 +217,7 @@ header.shadow #search-icon {
     font-size: 0.938rem;
     margin: 0.5rem 0 1.4rem;
 }
+
+.heading {
+    text-align: center;
+}
