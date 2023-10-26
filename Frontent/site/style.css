@@ -267,7 +267,7 @@ header.shadow #search-icon {
     font-size: 1rem;
     background: var(--bg-color);
     padding: 8px;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
 }
 
 .cars-container .box:hover h2 {
