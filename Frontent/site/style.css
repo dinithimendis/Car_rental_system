@@ -221,3 +221,8 @@ header.shadow #search-icon {
 .heading {
     text-align: center;
 }
+
+.heading span {
+    font-weight: 500;
+    color: var(--main-color);
+}
