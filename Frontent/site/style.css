@@ -331,3 +331,8 @@ header.shadow #search-icon {
     border-top: 2px solid var(--main-color);
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
