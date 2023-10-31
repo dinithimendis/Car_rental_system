@@ -320,7 +320,7 @@ header.shadow #search-icon {
 }
 
 .blog-container .box .blog-btn:hover {
-    color: var(--main-color);
+    color: white;
     column-gap: 0.7rem;
     transition: 0.4s;
 }
