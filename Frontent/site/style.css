@@ -302,3 +302,8 @@ header.shadow #search-icon {
 .blog-container h3 {
     font-size: 1.2rem;
 }
+
+.blog-container .box p {
+    font-size: 0.850rem; /*----------------------------------------------------card details font size */
+    margin: 4px 0;
+}
