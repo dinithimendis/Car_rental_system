@@ -314,3 +314,7 @@ header.shadow #search-icon {
     column-gap: 4px;
     color: var(--text-color);
 }
+
+.blog-container .box .blog-btn .bx {
+    font-size: 20px;
+}
