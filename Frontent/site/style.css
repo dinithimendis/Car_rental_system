@@ -367,3 +367,9 @@ header.shadow #search-icon {
     font-weight: 400;
     margin-bottom: 1rem;
 }
+
+.footer-box a,
+.footer-box p {
+    color: #818181;
+    margin-bottom: 10px;
+}
