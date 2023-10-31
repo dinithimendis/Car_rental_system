@@ -325,3 +325,9 @@ header.shadow #search-icon {
     transition: 0.4s;
 }
 
+.footer {
+    background: var(--text-color);
+    color: #f6f6f6;
+    border-top: 2px solid var(--main-color);
+}
+
