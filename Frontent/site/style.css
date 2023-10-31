@@ -361,3 +361,9 @@ header.shadow #search-icon {
 .social a:hover {
     color: var(--main-color);
 }
+
+.footer-box h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
