@@ -293,3 +293,8 @@ header.shadow #search-icon {
 .blog-container .box:hover {
     background: var(--main-color);
 }
+
+.blog-container .box span {
+    font-size: 0.8rem;
+    color: var(--main-color);
+}
