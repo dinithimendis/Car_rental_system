@@ -341,3 +341,8 @@ header.shadow #search-icon {
     color: var(--bg-color);
     margin-bottom: 1rem;
 }
+
+.footer-container .footer-box {
+    display: flex;
+    flex-direction: column;
+}
