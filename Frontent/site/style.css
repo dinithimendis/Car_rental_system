@@ -307,3 +307,10 @@ header.shadow #search-icon {
     font-size: 0.850rem; /*----------------------------------------------------card details font size */
     margin: 4px 0;
 }
+
+.blog-container .box .blog-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    color: var(--text-color);
+}
