@@ -275,5 +275,12 @@ header.shadow #search-icon {
     color: var(--bg-color);
 }
 
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 
 
