@@ -357,3 +357,7 @@ header.shadow #search-icon {
     color: var(--bg-color);
     margin-right: 1rem;
 }
+
+.social a:hover {
+    color: var(--main-color);
+}
