@@ -373,3 +373,7 @@ header.shadow #search-icon {
     color: #818181;
     margin-bottom: 10px;
 }
+
+.footer-box a:hover {
+    color: var(--main-color);
+}
