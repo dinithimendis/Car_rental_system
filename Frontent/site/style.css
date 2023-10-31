@@ -298,3 +298,7 @@ header.shadow #search-icon {
     font-size: 0.8rem;
     color: var(--main-color);
 }
+
+.blog-container h3 {
+    font-size: 1.2rem;
+}
