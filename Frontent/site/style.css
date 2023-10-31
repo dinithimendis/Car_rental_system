@@ -282,5 +282,11 @@ header.shadow #search-icon {
     margin-top: 2rem;
 }
 
-
+.blog-container .box {
+    flex: 1 1 13rem;
+    padding: 20px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px !important;
+}
 
