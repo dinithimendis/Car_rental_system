@@ -346,3 +346,8 @@ header.shadow #search-icon {
     display: flex;
     flex-direction: column;
 }
+
+.social {
+    display: flex;
+    align-items: center;
+}
