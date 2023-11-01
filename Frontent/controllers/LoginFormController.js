@@ -10,6 +10,45 @@ $("#login").on('click', function () {
         success: function (resp) {
             console.log($("#name").val());
             console.log($("#password").val())
+
+            if ('ADMIN' === $("#role").val()) {
+
+                 Swal.fire({
+                     title: 'You are login as a Admin !',
+                     showClass: {
+                         popup: 'animate__animated animate__fadeInDown'
+                     },
+                     hideClass: {
+                         popup: 'animate__animated animate__fadeOutUp'
+                     }
+                 })
+
+                if ("Ok" === resp.state) {
+                window.location.href = "DashBoardForm.html";
+                 } else {
+                     alert(resp.state);
+                 }
+
+            } else if ('DRIVER' === $("#role").val()) {
+
+                Swal.fire({
+                    title: 'You are login as a Driver !',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+
+                if ("Ok" === resp.state) {
+                window.location.href = "DriverShedule.html";
+                 } else {
+                     alert(resp.state);
+                 }
+
+            }
+
         },
 
         error: function (error) {
