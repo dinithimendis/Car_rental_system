@@ -190,3 +190,38 @@ $("#deleteCustomer").on('click', function () {
         }
     });
 });
+
+let cusID = "C00-0";
+
+function getAllCustomers() {
+    $("#customerTableBody").empty();
+    $.ajax({
+        url: baseURL + "/customer/get_all", success: function (res) {
+            for (let c of res.data) {
+
+                let id = c.id;
+                let firstName = c.name.firstName;
+                let lastName = c.name.lastName;
+                let address = c.address;
+                let email = c.email;
+                let contactNo = c.contactNo;
+                let user_name = c.user.userName;
+                let nic = c.nic;
+                let drivingLicenceNo = c.drivingLicenseNo;
+                let role = c.user.role;
+                let user_id = c.user.userId;
+                let password = c.user.password;
+
+
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + user_name + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + drivingLicenceNo + "</td>" + "<td>" + role + "</td>" + "<td>" + user_id + "</td>" + "</tr>";
+                $("#customerTableBody").append(row);
+            }
+            bindRowClickEvents();
+            clearTextFields();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+    genarateID();
+}
