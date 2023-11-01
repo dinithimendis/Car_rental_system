@@ -241,3 +241,54 @@ function genarateID() {
 }
 
 let code;
+
+function bindRowClickEvents() {
+
+
+    $("#customerTableBody>tr").on('click', function () {
+        let id = $(this).children(":eq(0)").text();
+        let firstName = $(this).children(":eq(1)").text();
+        let lastName = $(this).children(":eq(1)").text();
+        let address = $(this).children(":eq(3)").text();
+        let email = $(this).children(":eq(4)").text();
+        let contactNo = $(this).children(":eq(5)").text();
+        let userName = $(this).children(":eq(6)").text();
+        let password = $(this).children(":eq(7)").text();
+        let nic = $(this).children(":eq(8)").text();
+        let drivingLicenseNo = $(this).children(":eq(9)").text();
+        let role = $(this).children(":eq(10)").text();
+        let userId = $(this).children(":eq(11)").text();
+
+
+        $('#id').val(id);
+        $('#firstName').val(firstName);
+        $('#lastName').val(lastName);
+        $('#address').val(address);
+        $('#email').val(email);
+        $('#contactNo').val(contactNo);
+        $('#userName').val(userName);
+        $('#password').val(password);
+        $('#nic').val(nic);
+        $('#drivingLicenseNo').val(drivingLicenseNo);
+        $('#role').val(role);
+        $('#userId').val(userId);
+
+        //TODO image repeating problem *****************
+
+        $("#imgLoader").empty();
+        $("#imgLoader2").empty();
+        let key = $(this).children(":eq(0)").text();
+
+        const url = localStorage.getItem(key + "1stPhoto");
+        const img = new Image();
+        img.src = url;
+        $("#imgLoader").append(img);
+
+
+        const url2 = localStorage.getItem(key + "2stPhoto");
+        const img2 = new Image();
+        img2.src = url2;
+        $("#imgLoader2").append(img2);
+
+    });
+}
