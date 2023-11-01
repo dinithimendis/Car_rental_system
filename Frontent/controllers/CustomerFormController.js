@@ -138,3 +138,55 @@ $("#updateCustomer").on('click', function () {
         }
     });
 });
+
+$("#deleteCustomer").on('click', function () {
+    $.ajax({
+        url: baseURL + "/customer/?code=" + $("#id").val(),
+        method: "delete",
+        dataType: "json",
+        success: function (resp) {
+            clearTextFields();
+            getAllCustomers();
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'deleted successfully !'
+            });
+
+        },
+        error: function (error) {
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'delete unsuccessful !'
+            });
+        }
+    });
+});
