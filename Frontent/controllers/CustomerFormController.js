@@ -225,3 +225,19 @@ function getAllCustomers() {
     });
     genarateID();
 }
+
+let genaratedValue;
+
+function genarateID() {
+    $.ajax({
+        url: baseURL + "/customer/?test=", success: function (res) {
+            $('#id').val(res.data);
+            genaratedValue = res.data;
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+
+let code;
