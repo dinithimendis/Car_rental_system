@@ -380,3 +380,45 @@ function loadAllVehiclesToCombo() {
         }
     });
 }
+
+$("#placeBookingBtn").on('click', function () {
+    let bookingID = $("#bookingId").val();//
+    let rentID = $("#rentID").val();//
+    let driverID = $("#driverId").val();//
+    let driverName = $("#driverName").val(); //
+    let customer = $("#customer").val(); //
+    let customerName = $("#customerName").val(); //
+    let vehicleID = $("#vehicleId").val(); //
+    let pickupDate = $("#pickUpDate").val(); //
+    let driverRequest = $("#DriverRequestType").val(); //
+    let pickUpLocation = $("#pickUpLocation").val();  //
+    let returnDate = $("#returnDate").val(); //
+    let pickupTime = $("#pickUpTime").val(); //
+
+
+    var booking = {
+        bookingID: bookingID,
+        pickUpDate: pickupDate,
+        pickUpTime: pickupTime,
+        returnDate: returnDate,
+        driverRequestType: driverRequest,
+        customer: {id: customer},
+        pickUpLocation: pickUpLocation,
+        bookingDetails: [{vehicleID: vehicleID, bookingID: bookingID}],
+        driverSchedules: [{driverID: driverID, bookingID: bookingID}],
+    }
+
+    $.ajax({
+        url: baseURL + "/bookings/place_bookings",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(booking),
+        dataType: "json",
+        success: function (res) {
+            alert(res.message);
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});
