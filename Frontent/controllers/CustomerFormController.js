@@ -441,7 +441,7 @@ validator('#password', /^[A-z]{4,30}$/, "Your input can't be validated", '#admin
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#user_id_label', '#drivingLicenseNo');
 validator('#drivingLicenseNo', /^[0-9]{1,10}$/, "Your input can't be validated", '#user_id_label', '#nic');
 
-//TODO image storing option local storage
+//image storing option local storage
 
 var imgArray = [];
 var verify1;
