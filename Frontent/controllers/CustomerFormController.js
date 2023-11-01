@@ -366,3 +366,17 @@ $('#driverId').on('click', function () {
         }
     });
 });
+
+function loadAllVehiclesToCombo() {
+    $('#vehicleId').empty();
+    $.ajax({
+        url: baseURL + "/bookings/get_all_vehicles", method: "GET", dataType: "json", success: function (res) {
+            for (let vehicle of res.data) {
+                $("#vehicleId").append(`<option>${vehicle.vehicleID}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
