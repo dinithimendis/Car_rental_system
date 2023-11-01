@@ -31,7 +31,7 @@ function saveAdmin() {
 
             Toast.fire({
                 icon: 'success',
-                title: 'Saved in successfully'
+                title: 'Saved successfully'
             });
         }, error: function (error) {
             const Toast = Swal.mixin({
