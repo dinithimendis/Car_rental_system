@@ -6,3 +6,8 @@ getAllAdmins();
 $("#saveAdmin").on('click', function () {
     saveAdmin();
 });
+
+function saveAdmin() {
+    let formData = $("#adminFormController").serialize();
+
+}
