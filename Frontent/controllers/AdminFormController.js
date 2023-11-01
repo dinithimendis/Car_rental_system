@@ -226,3 +226,19 @@ $("#updateAdmin").on('click', function () {
     });
 
 });
+
+function bindRowClickEventsForAdminTable() {
+    $("#adminTableBody>tr").on('click', function () {
+        $("#firstName").val($(this).children(":eq(0)").text());
+        $("#lastName").val($(this).children(":eq(1)").text());
+        $("#adminAddress").val($(this).children(":eq(2)").text());
+        $("#adminContact").val($(this).children(":eq(3)").text());
+        $("#adminEmail").val($(this).children(":eq(4)").text());
+        $("#userName").val($(this).children(":eq(5)").text());
+        $("#password").val($(this).children(":eq(6)").text());
+        $("#adminNic").val($(this).children(":eq(7)").text());
+        $("#adminId").val($(this).children(":eq(8)").text());
+        $("#role").val($(this).children(":eq(9)").text());
+        $("#userId").val($(this).children(":eq(10)").text());
+    });
+}
