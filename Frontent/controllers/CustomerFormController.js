@@ -313,3 +313,17 @@ function clearTextFields() {
 loadAllDriversToCombo();
 loadAllCustomersToCombo();
 loadAllVehiclesToCombo();
+
+function loadAllCustomersToCombo() {
+    $('#customer').empty();
+    $.ajax({
+        url: baseURL + "/bookings/get_all_customers", method: "GET", dataType: "json", success: function (res) {
+            for (let customer of res.data) {
+                $("#customer").append(`<option>${customer.id}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
