@@ -440,3 +440,42 @@ validator('#userId', /^[0-9]{12}$/, "Your input can't be validated", '#admin_nic
 validator('#password', /^[A-z]{4,30}$/, "Your input can't be validated", '#admin_id_label', '#drivingLicenseNo');
 validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#user_id_label', '#drivingLicenseNo');
 validator('#drivingLicenseNo', /^[0-9]{1,10}$/, "Your input can't be validated", '#user_id_label', '#nic');
+
+//TODO image storing option local storage
+
+var imgArray = [];
+var verify1;
+
+$('#file').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            verify1 = reader.result;
+            imgArray.push(reader.result);
+            $('#display').css({
+                "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+
+$('#file2').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            imgArray.push(reader.result);
+            $('#display2').css({
+                "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
+let row;
+
+
+const reader = new FileReader();
+const reader2 = new FileReader();
