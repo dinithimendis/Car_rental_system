@@ -107,7 +107,7 @@ $("#deleteAdmin").on('click', function () {
 });
 
 /*generate id*/
-function genarateAdminID() {
+function generateAdminID() {
     $.ajax({
         url: baseURL + "?test=", success: function (res) {
             $('#adminId').val(res.data);
@@ -117,3 +117,36 @@ function genarateAdminID() {
         }
     });
 }
+
+/*get all admins*/
+
+function getAllAdmins() {
+    $("#adminTableBody").empty();
+    $.ajax({
+        url: baseURL + "get_all_admin", success: function (res) {
+            for (let c of res.data) {
+
+                let firstName = c.adminName.firstName;
+                let lastName = c.adminName.lastName;
+                let address = c.adminAddress;
+                let contact = c.adminContact;
+                let email = c.adminEmail;
+                let username = c.user.userName;
+                let password = c.user.password;
+                let nic = c.adminNic;
+                let id = c.adminId;
+                let role = c.user.role;
+                let userId = c.user.userId;
+
+                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>" + "<td>" + role + "</td>" + "<td>" + userId + "</td>" + "</tr>";
+                $("#adminTableBody").append(row);
+            }
+            bindRowClickEventsForAdminTable();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+    generateAdminID();
+}
+
