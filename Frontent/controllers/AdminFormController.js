@@ -12,6 +12,11 @@ function saveAdmin() {
 
     $.ajax({
 
+        url: baseURL + "save_admin", method: "post", data: formData, dataType: "json", success: function (res) {
+            getAllAdmins();
+
+        }
+
     });
 
 
