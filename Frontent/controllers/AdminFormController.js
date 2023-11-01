@@ -150,3 +150,79 @@ function getAllAdmins() {
     generateAdminID();
 }
 
+$("#updateAdmin").on('click', function () {
+
+    let firstName = $("#firstName").val();
+    let lastName = $("#lastName").val();
+    let address = $("#adminAddress").val();
+    let contact = $("#adminContact").val();
+    let email = $("#adminEmail").val();
+    let username = $("#userName").val();
+    let password = $("#password").val();
+    let nic = $("#adminNic").val();
+    let id = $("#adminId").val();
+    let role = $("#role").val();
+    let userId = $("#userId").val();
+
+    var adminObj = {
+        adminName: {firstName: firstName, lastName: lastName},
+        adminAddress: address,
+        adminContact: contact,
+        adminEmail: email,
+        user: {username: username, password: password, role: role, userId: userId},
+        adminNic: nic,
+        adminId: id
+    }
+
+    $.ajax({
+        url: baseURL + "update",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(adminObj),
+        dataType: "json",
+        success: function (res) {
+            getAllAdmins();
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'updated successfully !'
+            });
+            clearTextFields();
+        },
+        error: function (error) {
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'update failed !'
+            });
+        }
+    });
+
+});
