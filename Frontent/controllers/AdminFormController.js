@@ -57,5 +57,6 @@ function saveAdmin() {
 
     });
 
-
 }
+
+/* delete admin function */
