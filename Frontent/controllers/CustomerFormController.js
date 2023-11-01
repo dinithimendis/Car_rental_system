@@ -292,3 +292,24 @@ function bindRowClickEvents() {
 
     });
 }
+
+function clearTextFields() {
+    $('#id').val("");
+    $('#firstName').val("");
+    $('#lastName').val("");
+    $('#address').val("");
+    $('#email').val("");
+    $('#contactNo').val("");
+    $('#userName').val("");
+    $('#password').val("");
+    $('#nic').val("");
+    $('#drivingLicenseNo').val("");
+    $('#role').val("");
+    $('#userId').val("");
+    // $("#imgLoader").load();
+    // $("#imgLoader2").location.reload();
+}
+
+loadAllDriversToCombo();
+loadAllCustomersToCombo();
+loadAllVehiclesToCombo();
