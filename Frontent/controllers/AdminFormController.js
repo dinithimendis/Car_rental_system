@@ -84,7 +84,6 @@ $("#deleteAdmin").on('click', function () {
                 title: 'deleted successfully !'
             });
         }, error: function (error) {
-            // alert(JSON.parse(error.responseText).message);
             const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
