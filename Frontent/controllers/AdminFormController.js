@@ -12,7 +12,8 @@ function saveAdmin() {
 
     $.ajax({
 
-        url: baseURL + "save_admin", method: "post", data: formData, dataType: "json", success: function (res) {
+        url: baseURL + "save_admin", method: "post", data: formData, dataType: "json",
+                success: function (res) {
             getAllAdmins();
 
             const Toast = Swal.mixin({
@@ -138,7 +139,18 @@ function getAllAdmins() {
                 let role = c.user.role;
                 let userId = c.user.userId;
 
-                let row = "<tr>" + "<td>" + firstName + "</td>" + "<td>" + lastName + "</td>" + "<td>" + address + "</td>" + "<td>" + contact + "</td>" + "<td>" + email + "</td>" + "<td>" + username + "</td>" + "<td>" + password + "</td>" + "<td>" + nic + "</td>" + "<td>" + id + "</td>" + "<td>" + role + "</td>" + "<td>" + userId + "</td>" + "</tr>";
+                let row =
+                    "<tr>" + "<td>" + firstName + "</td>" +
+                             "<td>" + lastName + "</td>" +
+                             "<td>" + address + "</td>" +
+                             "<td>" + contact + "</td>" +
+                             "<td>" + email + "</td>" +
+                             "<td>" + username + "</td>" +
+                             "<td>" + password + "</td>" +
+                             "<td>" + nic + "</td>" +
+                             "<td>" + id + "</td>" +
+                             "<td>" + role + "</td>" +
+                             "<td>" + userId + "</td>" + "</tr>";
                 $("#adminTableBody").append(row);
             }
             bindRowClickEventsForAdminTable();
@@ -242,3 +254,10 @@ function bindRowClickEventsForAdminTable() {
         $("#userId").val($(this).children(":eq(10)").text());
     });
 }
+
+$('#firstName,#lastName,#adminAddress,#adminContact,#adminEmail,#userName,#password,#adminNic,#adminId,#userId')
+    .on('keydown', function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+});
