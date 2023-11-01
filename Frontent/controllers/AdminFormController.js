@@ -34,6 +34,9 @@ function saveAdmin() {
                 icon: 'success',
                 title: 'Saved successfully'
             });
+
+            clearTextFields();
+
         }, error: function (error) {
             const Toast = Swal.mixin({
                 toast: true,
@@ -84,6 +87,9 @@ $("#deleteAdmin").on('click', function () {
                 icon: 'success',
                 title: 'deleted successfully !'
             });
+
+            clearTextFields();
+
         }, error: function (error) {
             const Toast = Swal.mixin({
                 toast: true,
@@ -239,6 +245,22 @@ $("#updateAdmin").on('click', function () {
 
 });
 
+function clearTextFields() {
+    $('#firstName').val("");
+    $('#lastName').val("");
+    $('#adminAddress').val("");
+    $('#adminContact').val("");
+    $('#adminEmail').val("");
+    $('#userName').val("");
+    $('#password').val("");
+    $('#adminNic').val("");
+    /*$('#drivingLicenseNo').val("");*/
+    $('#role').val("");
+    $('#userId').val("");
+    // $("#imgLoader").load();
+    // $("#imgLoader2").location.reload();
+}
+
 function bindRowClickEventsForAdminTable() {
     $("#adminTableBody>tr").on('click', function () {
         $("#firstName").val($(this).children(":eq(0)").text());
@@ -261,3 +283,14 @@ $('#firstName,#lastName,#adminAddress,#adminContact,#adminEmail,#userName,#passw
         e.preventDefault();
     }
 });
+
+validator('#firstName', /^[A-z]{3,30}$/, "Your input can't be validated", '#reg_id', '#lastName');
+validator('#lastName', /^[A-z]{3,30}$/, "Your input can't be validated", '#f_name', '#adminAddress');
+validator('#adminAddress', /^[A-z]{3,30}$/, "Your input can't be validated", '#l_name', '#adminContact');
+validator('#adminContact', /^(07([1245678])|091)(-)[0-9]{7}$/, "Your input can't be validated", '#address_lbl', '#adminEmail');
+validator('#adminEmail', /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, "Your input can't be validated", '#email_lbl', '#userName');
+validator('#userName', /^[A-z]{3,30}$/, "Your input can't be validated", '#contact_lbl', '#password');
+validator('#password', /^[A-z]{3,30}$/, "Your input can't be validated", '#userName_lbl', '#adminNic');
+validator('#adminNic', /^[0-9]{12}$/, "Your input can't be validated", '#userId_lbl', '#adminId');
+validator('#adminId', /^A00-00[0-9]{1,5}$/, "Your input can't be validated", '#password_lbl', '#userId');
+validator('#userId', /^[0-9]{1,5}$/, "Your input can't be validated", '#nic_lbl', '#');
