@@ -339,3 +339,18 @@ $('#customer').on('click', function () {
         }
     });
 });
+
+function loadAllDriversToCombo() {
+    $('#driverId').empty();
+
+    $.ajax({
+        url: baseURL + "/bookings/get_all_drivers", method: "GET", dataType: "json", success: function (res) {
+            for (let driver of res.data) {
+                $("#driverId").append(`<option>${driver.id}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
