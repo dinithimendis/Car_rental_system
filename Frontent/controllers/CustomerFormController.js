@@ -422,3 +422,9 @@ $("#placeBookingBtn").on('click', function () {
         }
     });
 });
+
+$(' #id,#firstName,#lastName,#address,#email,#contactNo,#userName,#userId,#password,#nic,#drivingLicenseNo').on('keydown', function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+})
