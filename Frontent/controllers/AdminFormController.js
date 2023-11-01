@@ -10,4 +10,9 @@ $("#saveAdmin").on('click', function () {
 function saveAdmin() {
     let formData = $("#adminFormController").serialize();
 
+    $.ajax({
+
+    });
+
+
 }
