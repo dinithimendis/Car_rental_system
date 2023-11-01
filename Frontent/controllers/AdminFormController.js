@@ -48,6 +48,11 @@ function saveAdmin() {
                 }
             })
 
+            Toast.fire({
+                icon: 'error',
+                title: 'cannot be validated !'
+            });
+
         }
 
     });
