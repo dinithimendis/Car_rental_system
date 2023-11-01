@@ -1,16 +1,4 @@
 function validator(txtField, regXPattern, warningText, errorLbl, nextTxtField) {
-    /**
-     * How to use this method ?
-     *      -------------------------------------------------------------------------->
-     *      txtField        -    pass text field if you want to select
-     *      regXPattern     -    pass your reg-x pattern here and validate your text
-     *      warningText     -    pass your validation error, warning message
-     *      errorLbl        -    pass id if you have error label
-     *      nextTxtField    -    pass next text field id here
-     *      -------------------------------------------------------------------------->
-     *
-     *      © 2022 mGunawardhana,INC. ALL RIGHTS RESERVED.
-     * */
 
     $(txtField).on('keyup', function (e) {
 
