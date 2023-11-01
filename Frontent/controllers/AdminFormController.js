@@ -29,6 +29,13 @@ function saveAdmin() {
                 }
             })
 
+            Toast.fire({
+                icon: 'success',
+                title: 'Saved in successfully'
+            });
+        }, error: function (error) {
+
+
         }
 
     });
