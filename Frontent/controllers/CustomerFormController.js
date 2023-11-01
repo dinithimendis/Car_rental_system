@@ -327,3 +327,15 @@ function loadAllCustomersToCombo() {
         }
     });
 }
+
+$('#customer').on('click', function () {
+    $.ajax({
+        url: baseURL + "/bookings/get_all_customers/", method: "GET", dataType: "json", success: function (res) {
+            for (let customer of res.data) {
+                if (customer.id === $('#customer').val()) {
+                    $("#customerName").val(customer.name.firstName);
+                }
+            }
+        }
+    });
+});
