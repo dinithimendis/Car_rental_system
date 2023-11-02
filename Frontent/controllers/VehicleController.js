@@ -473,3 +473,21 @@ function searchByType() {
         }
     });
 }
+
+function searchByTransMissionType() {
+    $("#vehicleTableBody").empty();
+
+    $.ajax({
+        url: baseURL + "searching/?transmission_type=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                vehicleSearchManager(c);
+            }
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+}
