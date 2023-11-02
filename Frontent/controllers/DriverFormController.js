@@ -243,3 +243,9 @@ function bindRowClickEventsForDriver() {
 
     });
 }
+
+$('#id,#firstName,#lastName,#address,#drivingLicenseNo,#email,#contactNo,#driverAvailability,#userName,#userId,#nic,#password').on('keydown', function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+})
