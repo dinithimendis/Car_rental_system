@@ -297,3 +297,9 @@ $("#deleteVehicle").on('click', function () {
         }
     });
 });
+
+$('#vehicleId#numberOfPassenger,#extraKmPer,#registrationNo,#vehicleColour,#dailyRate,#monthlyRate,#vehicleAvailability,#vehicleBrand,#transmissionType,#dailyMileage,#monthlyMileage,#fuelType,#refundableDamagedFee,#vehicleType,#dailyMileage1,#lastServiceMileage').on('keydown', function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+    }
+})
