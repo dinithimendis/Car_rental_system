@@ -68,6 +68,9 @@ $('#bookingId').on('click', function () {
     });
 });
 
+
+getAllPaymentDetails();
+
 function getAllPaymentDetails() {
     $("#paymentTable").empty();
     $.ajax({
