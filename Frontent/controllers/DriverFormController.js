@@ -225,3 +225,21 @@ $("#updateDriver").on('click', function () {
         }
     });
 });
+
+function bindRowClickEventsForDriver() {
+    $("#driverTableBody>tr").on('click', function () {
+        $('#id').val($(this).children(":eq(0)").text());
+        $('#firstName').val($(this).children(":eq(1)").text());
+        $('#lastName').val($(this).children(":eq(2)").text());
+        $('#address').val($(this).children(":eq(3)").text());
+        $('#drivingLicenseNo').val($(this).children(":eq(4)").text());
+        $('#email').val($(this).children(":eq(5)").text());
+        $('#contactNo').val($(this).children(":eq(6)").text());
+        $('#driverAvailability').val($(this).children(":eq(7)").text());
+        $('#userName').val($(this).children(":eq(8)").text());
+        $('#userId').val($(this).children(":eq(9)").text());
+        $('#nic').val($(this).children(":eq(10)").text());
+        $('#password').val($(this).children(":eq(11)").text());
+
+    });
+}
