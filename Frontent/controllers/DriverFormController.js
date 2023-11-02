@@ -54,3 +54,36 @@ function saveDriver() {
         }
     });
 }
+
+function getAllDrivers() {
+    $("#driverTableBody").empty();
+    $.ajax({
+        url: baseURL + "get_all", success: function (res) {
+            for (let c of res.data) {
+
+                let id = c.id;
+                let firstname = c.name.firstName;
+                let lastname = c.name.lastName;
+                let address = c.address;
+                let drivingLicenseNo = c.drivingLicenseNo;
+                let email = c.email;
+                let contactNo = c.contactNo;
+                let driverAvailability = c.driverAvailability;
+                let userName = c.user.userName;
+                let user_id = c.user.userId;
+                let nic = c.nic;
+                let password = c.user.password;
+
+                let row = "<tr>" + "<td>" + id + "</td>" + "<td>" + firstname + "</td>" + "<td>" + lastname + "</td>" + "<td>" + address + "</td>" + "<td>" + drivingLicenseNo + "</td>" + "<td>" + email + "</td>" + "<td>" + contactNo + "</td>" + "<td>" + driverAvailability + "</td>" + "<td>" + userName + "</td>" + "<td>" + user_id + "</td>" + "<td>" + nic + "</td>" + "<td>" + password + "</td>" + "</tr>";
+
+                $("#driverTableBody").append(row);
+            }
+
+            bindRowClickEventsForDriver();
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+    genarateID();
+}
