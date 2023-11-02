@@ -369,3 +369,16 @@ $('#car3').on("change", function (e) {
         reader.readAsDataURL(file[0]);
     }
 })
+
+$('#car4').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $('#innerImg').css({
+                "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+});
