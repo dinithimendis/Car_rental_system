@@ -113,3 +113,93 @@ function genarateVehicleID() {
         }
     });
 }
+
+$("#updateVehicle").on('click', function () {
+    let vehicleId = $('#vehicleId').val();
+    let numberOfPassenger = $('#numberOfPassenger').val();
+    let extraKmPer = $('#extraKmPer').val();
+    let registrationNo = $('#registrationNo').val();
+    let vehicleColour = $('#vehicleColour').val();
+    let dailyRate = $('#dailyRate').val();
+    let monthlyRate = $('#monthlyRate').val();
+    let vehicleAvailability = $('#vehicleAvailability').val();
+    let vehicleBrand = $('#vehicleBrand').val();
+    let transmissionType = $('#transmissionType').val();
+    let dailyMileage = $('#dailyMileage').val();
+    let monthlyMileage = $('#monthlyMileage').val();
+    let fuelType = $('#fuelType').val();
+    let refundableDamagedFee = $('#refundableDamagedFee').val();
+    let vehicleType = $('#vehicleType').val();
+    let lastServiceMileage = $('#lastServiceMileage').val();
+
+
+    var vehicleObj = {
+        vehicleID: vehicleId,
+        numberOfPassenger: numberOfPassenger,
+        extraKmPer: extraKmPer,
+        registrationNo: registrationNo,
+        vehicleColour: vehicleColour,
+        vehiclePriceRate: {dailyRate: dailyRate, monthlyRate: monthlyRate},
+        freeMileage: {dailyMileage: dailyMileage, monthlyMileage: monthlyMileage},
+        vehicleAvailability: vehicleAvailability,
+        vehicleBrand: vehicleBrand,
+        transmissionType: transmissionType,
+        fuelType: fuelType,
+        refundableDamagedFee: refundableDamagedFee,
+        vehicleType: vehicleType,
+        lastServiceMileage: lastServiceMileage,
+    }
+
+    $.ajax({
+        url: baseURL + "vehicle/update",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(vehicleObj),
+        dataType: "json",
+        success: function (res) {
+            alert("update method invoked");
+            getAllVehicle();
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Updated successfully !'
+            });
+            clearTextFields();
+        },
+        error: function (error) {
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Update Unsuccessful !'
+            });
+        }
+    });
+
+});
