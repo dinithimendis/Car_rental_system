@@ -392,6 +392,492 @@
     </div>
 </aside>
 
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:">Pages</a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item text-sm text-dark active">Tables</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Tables</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                    <div class="input-group">
+                        <select class="form-control" id="searchDropBox" name="searchType">
+                            <option>Search By</option>
+                            <option>PASSENGERS</option>
+                            <option>TRANSMISSION</option>
+                            <option>BRAND</option>
+                            <option>TYPE</option>
+                            <option>PRICE</option>
+                            <option>FUEL</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text text-body"><i aria-hidden="true" class="fas fa-search"></i></span>
+                        <input class="form-control" id="vehicleSearch" placeholder="Type here..." type="text">
+                    </div>
+                    <button class="btn btn-primary bg-success" id="search" style="margin-top: 11px !important;"
+                            type="button">Search
+                    </button>
+
+                </div>
+                <ul class="navbar-nav  justify-content-end">
+
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a class="nav-link text-body p-0" href="javascript:" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3 d-flex align-items-center">
+                        <a class="nav-link text-body p-0" href="javascript:">
+                            <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                        <a aria-expanded="false" class="nav-link text-body p-0" data-bs-toggle="dropdown"
+                           href="javascript:" id="dropdownMenuButton">
+                            <i class="fa fa-bell cursor-pointer"></i>
+                        </a>
+                        <ul aria-labelledby="dropdownMenuButton"
+                            class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4">
+                            <li class="mb-2">
+                                <a class="dropdown-item border-radius-md" href="javascript:">
+                                    <div class="d-flex py-1">
+                                        <div class="my-auto">
+                                            <img class="avatar avatar-sm  me-3 " src="../assets/img/team-2.jpg">
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="text-sm font-weight-normal mb-1">
+                                                <span class="font-weight-bold">New message</span> from Laur
+                                            </h6>
+                                            <p class="text-xs text-secondary mb-0 ">
+                                                <i class="fa fa-clock me-1"></i>
+                                                13 minutes ago
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="dropdown-item border-radius-md" href="javascript:">
+                                    <div class="d-flex py-1">
+                                        <div class="my-auto">
+                                            <img class="avatar avatar-sm bg-gradient-dark  me-3 "
+                                                 src="../assets/img/small-logos/logo-spotify.svg">
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="text-sm font-weight-normal mb-1">
+                                                <span class="font-weight-bold">New album</span> by Travis Scott
+                                            </h6>
+                                            <p class="text-xs text-secondary mb-0 ">
+                                                <i class="fa fa-clock me-1"></i>
+                                                1 day
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item border-radius-md" href="javascript:">
+                                    <div class="d-flex py-1">
+                                        <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                                            <svg height="12px" version="1.1" viewBox="0 0 43 36" width="12px"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <title>credit-card</title>
+                                                <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+                                                    <g fill="#FFFFFF" fill-rule="nonzero"
+                                                       transform="translate(-2169.000000, -745.000000)">
+                                                        <g transform="translate(1716.000000, 291.000000)">
+                                                            <g transform="translate(453.000000, 454.000000)">
+                                                                <path class="color-background"
+                                                                      d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
+                                                                      opacity="0.593633743"></path>
+                                                                <path class="color-background"
+                                                                      d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="text-sm font-weight-normal mb-1">
+                                                Payment successfully completed
+                                            </h6>
+                                            <p class="text-xs text-secondary mb-0 ">
+                                                <i class="fa fa-clock me-1"></i>
+                                                2 days
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+        <!--*****************************************************************************************************************-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+
+
+                    <!--*************************************************************************-->
+                    <div class="card-body">
+                        <form id="vehicleFormController">
+                            <div class="row form-group">
+
+
+
+
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Car Management</span></h5>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Vehicle ID</label><!--changed place-->
+                                        <input class="form-control"  id="vehicleId" name="vehicleID" type="text">
+                                        <p><small class="text-danger fw-bold" id="vehicleId_lbl"></small></p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>No of Passenger</label>
+                                        <input class="form-control" id="numberOfPassenger" name="numberOfPassenger"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="no_of_passenger_lbl"></small></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Extra Km Price</label>
+                                        <input class="form-control" id="extraKmPer" name="extraKmPer"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="extra_km_per"></small></p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Registration No</label>
+                                        <input class="form-control" id="registrationNo" name="registrationNo"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="reg_no_lbl"></small></p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Colour</label>
+                                        <input class="form-control" id="vehicleColour" name="vehicleColour" type="text">
+                                        <p><small class="text-danger fw-bold" id="col_lbl"></small></p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Daily Amount</label>
+                                        <input class="form-control" id="dailyRate" name="vehiclePriceRate.dailyRate"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="daily_amount_lbl"></small></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Monthly Amount</label>
+                                        <input class="form-control" id="monthlyRate" name="vehiclePriceRate.monthlyRate"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="monthly_amount_lbl"></small></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Availability</label>
+                                        <select class="form-control" id="vehicleAvailability"
+                                                name="vehicleAvailability">
+                                            <option>Select Type</option>
+                                            <option>AVAILABLE</option>
+                                            <option>NOT_AVAILABLE</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Vehicle Brand</label>
+                                        <input class="form-control" id="vehicleBrand" name="vehicleBrand" type="text">
+                                        <p><small class="text-danger fw-bold" id="brand_lbl"></small></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Transmission</label>
+                                        <select class="form-control" id="transmissionType" name="transmissionType">
+                                            <option>Select Type</option>
+                                            <option>AUTO</option>
+                                            <option>MANUAL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Daily Km</label><!--user_name user.userName-->
+                                        <input class="form-control" id="dailyMileage"
+                                               name="freeMileage.dailyMileage" type="text">
+                                        <p><small class="text-danger fw-bold" id="daily_km_lbl"></small></p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Monthly Km</label><!--user_name user.userName-->
+                                        <input class="form-control" id="monthlyMileage"
+                                               name="freeMileage.monthlyMileage" type="text">
+                                        <p><small class="text-danger fw-bold" id="monthly_km_lbl"></small></p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>FuelType</label>
+                                        <select class="form-control" id="fuelType" name="fuelType">
+                                            <option>Select Type</option>
+                                            <option>DIESEL</option>
+                                            <option>PETROL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Damage Fee</label><!--user_name user.userName-->
+                                        <input class="form-control" id="refundableDamagedFee"
+                                               name="refundableDamagedFee" type="text">
+                                        <p><small class="text-danger fw-bold" id="damage_lbl"></small></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Vehicle Type</label>
+                                        <select class="form-control" id="vehicleType" name="vehicleType">
+                                            <option>Select Type</option>
+                                            <option>GENERAL</option>
+                                            <option>PREMIUM</option>
+                                            <option>LUXURY</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Service Millage</label>
+                                        <input class="form-control" id="dailyMileage1" name="dailyMileage" type="text">
+                                        <p><small class="text-danger fw-bold" id="service_mileage_lbl"></small></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-6 col-sm-3">
+                                    <div class="form-group">
+                                        <label>Last Service</label>
+                                        <input class="form-control" id="vehicleMileage" name="vehicleMileage"
+                                               type="text">
+                                        <p><small class="text-danger fw-bold" id="last_service_lbl"></small></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary bg-success" id="saveVehicle" type="button">Save
+                                    </button>
+                                    <button class="btn btn-primary bg-warning" id="updateVehicle" type="button">Update
+                                    </button>
+                                    <button class="btn btn-primary bg-danger" id="deleteVehicle" type="button">Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="row mt-4">
+
+                            <div class="col-5 col-sm-2">
+                                <form>
+                                    <label for="car1">Front Image</label>
+                                    <input class="form-control" id="car1" name="myFile" type="file">
+                                </form>
+                            </div>
+
+                            <div class="border border-1, w-20" id="frontImg" style="height: 100px"></div>
+
+
+                            <div class="col-5 col-sm-2">
+                                <form>
+                                    <label for="car2">Backside Image</label>
+                                    <input class="form-control" id="car2" name="myFile" type="file">
+                                </form>
+                            </div>
+
+                            <div class="border border-1, w-20" id="backImg" style="height: 100px"></div>
+
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-5 col-sm-2">
+                                <form>
+                                    <label for="car3">Side Image</label>
+                                    <input class="form-control" id="car3" name="myFile" type="file">
+                                </form>
+                            </div>
+
+                            <div class="border border-1, w-20" id="sideImg" style="height: 100px"></div>
+
+
+                            <div class="col-5 col-sm-2">
+                                <form>
+                                    <label for="car4">Interior Image</label>
+                                    <input class="form-control" id="car4" name="myFile" type="file">
+                                </form>
+                            </div>
+
+                            <div class="border border-1, w-20" id="innerImg" style="height: 100px"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0"  style="background-color: #2f3542 !important;">
+                        <h6 style="color: #ffffff !important;">Vehicle table</h6>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center justify-content-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Vehicle ID
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        No of Passenger
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Extra Km Price
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Registration No
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Colour
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Daily Amount
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Monthly Amount
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Availability
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Vehicle Brand
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Transmission
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Daily Km
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Monthly Km
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        FuelType
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Damage Fee
+                                    </th>
+
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Vehicle Type
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Service Millage
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                                        Last Service
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="vehicleTableBody">
+                                <!--=====================================================================================================   this is second table-->
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer pt-3  ">
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-start">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            ,
+                            Copy Write Owner <i class="fa fa-heart"></i> by
+                            <a class="font-weight-bold" href="" target="_blank"> mGunawardhana
+                            </a>
+                            Software Solutions
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                            <li class="nav-item">
+                                <a class="nav-link text-muted" href="" target="_blank">Creative
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-muted" href=""
+                                   target="_blank">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-muted" href="" target="_blank">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pe-0 text-muted" href=""
+                                   target="_blank">License</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</main>
 
 </body>
 </html>
