@@ -22,8 +22,7 @@ function getAllByDailyRevenues() {
     });
 }
 
-
-
+let month;
 
 function getAllByMonthlyRevenues() {
     $.ajax({
