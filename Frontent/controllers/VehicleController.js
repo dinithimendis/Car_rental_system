@@ -330,3 +330,16 @@ $('#car1').on("change", function (e) {
         reader.readAsDataURL(file[0]);
     }
 })
+
+$('#saveVehicle').on("click", function () {
+    /***************************************************************/
+    const frontImageFile = document.getElementById('car1');
+    const imgFile = frontImageFile.files[0];
+    vehicleFrontImgReader.readAsDataURL(imgFile);
+
+    vehicleFrontImgReader.addEventListener('load', () => {
+        const url = vehicleFrontImgReader.result
+        localStorage.setItem((genaratedVehicleValue + "frontPhoto"), url);
+    });
+    /***************************************************************/
+});
