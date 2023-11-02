@@ -249,3 +249,15 @@ $('#id,#firstName,#lastName,#address,#drivingLicenseNo,#email,#contactNo,#driver
         e.preventDefault();
     }
 })
+
+validator('#id', /^D00-00[0-9]{1,5}$/, "Your input can't be validated", '#driver_id_label', '#address');
+validator('#address', /^[A-z]{3,30}$/, "Your input can't be validated", '#address_lbl', '#contactNo');
+validator('#contactNo', /^(07([1245678])|091)(-)[0-9]{7}$/, "Your input can't be validated", '#contact_lbl', '#drivingLicenseNo');
+validator('#drivingLicenseNo', /^[0-9]{12}$/, "Your input can't be validated", '#licence_lbl', '#email');
+validator('#email', /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, "Your input can't be validated", '#eemail_lbl', '#firstName');
+validator('#firstName', /^[A-z]{3,30}$/, "Your input can't be validated", '#f_name_lbl', '#lastName');
+validator('#lastName', /^[A-z]{3,30}$/, "Your input can't be validated", '#l_name_lbl', '#userName');
+validator('#userName', /^[A-z]{3,12}$/, "Your input can't be validated", '#userName_lbl', '#password');
+validator('#userId', /^[0-9]{1,4}$/, "Your input can't be validated", '#user_id_lbl', '#nic');
+validator('#password', /^[A-z]{4,30}$/, "Your input can't be validated", '#password_lbl', '#nic');
+validator('#nic', /^[0-9]{12}$/, "Your input can't be validated", '#nic_lbl', '#nic');
