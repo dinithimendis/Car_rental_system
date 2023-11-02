@@ -67,3 +67,29 @@ $('#bookingId').on('click', function () {
         }
     });
 });
+
+function getAllPaymentDetails() {
+    $("#paymentTable").empty();
+    $.ajax({
+        url: baseURL + "/payment/get_all_payment_details", dataType: "json", success: function (res) {
+            for (let c of res.data) {
+                console.log(c)
+
+                let paymentID = c[0];
+                let paymentDate = c[1];
+                let invoiceNo = c[2];
+                let amount = c[3];
+                let paymentType = c[4];
+                let booking = c[5];
+
+
+                let row = "<tr>" + "<td>" + paymentID + "</td>" + "<td>" + invoiceNo + "</td>" + "<td>" + paymentDate + "</td>" + "<td>" + booking + "</td>" + "<td>" + paymentType + "</td>" + "<td>" + amount + "</td>" + "</tr>";
+                $("#paymentTable").append(row);
+            }
+
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
