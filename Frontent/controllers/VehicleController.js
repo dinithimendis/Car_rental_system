@@ -343,3 +343,16 @@ $('#saveVehicle').on("click", function () {
     });
     /***************************************************************/
 });
+
+$('#car2').on("change", function (e) {
+    let file = e.target.files;
+    if (FileReader && file && file.length) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $('#backImg').css({
+                "background": `url(${reader.result})`, "background-size": "cover", "background-position": "center"
+            });
+        }
+        reader.readAsDataURL(file[0]);
+    }
+})
