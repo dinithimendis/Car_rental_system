@@ -87,3 +87,14 @@ function getAllDrivers() {
     });
     genarateID();
 }
+
+function genarateID() {
+    $.ajax({
+        url: baseURL + "?test=", success: function (res) {
+            $('#id').val(res.data);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
