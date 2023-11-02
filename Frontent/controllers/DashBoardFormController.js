@@ -40,3 +40,15 @@ function setDriversCount() {
         }
     });
 }
+
+function setBookingCunt() {
+    $.ajax({
+        url: baseURL + "/bookings/bookingCount/{count}", method: "GET", dataType: "json", success: function (res) {
+            console.log(res.data);
+            $("#lbl5").text(res.data);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
