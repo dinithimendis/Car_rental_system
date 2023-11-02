@@ -382,3 +382,22 @@ $('#car4').on("change", function (e) {
         reader.readAsDataURL(file[0]);
     }
 });
+
+$("#search").on('click', function () {
+    let searchType = $("#searchDropBox").val();
+    if ("PASSENGERS" === searchType) {
+        searchByPassengerCount();
+    } else if ("TRANSMISSION" === searchType) {
+        searchByTransMissionType();
+    } else if ("BRAND" === searchType) {
+        searchByBrand();
+    } else if ("TYPE" === searchType) {
+        searchByType();
+    } else if ("PRICE" === searchType) {
+        searchByRate();
+    } else if ("FUEL" === searchType) {
+        searchByFuelType();
+    } else {
+        alert("fuck u idiot !");
+    }
+});
