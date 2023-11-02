@@ -35,3 +35,16 @@ $("#save").on('click', function () {
         }
     });
 });
+
+function loadAllCustomersToCombo() {
+    $.ajax({
+        url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
+            for (let booking of res.data) {
+                $("#bookingId").append(`<option>${booking.bookingID}</option>`);
+            }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
