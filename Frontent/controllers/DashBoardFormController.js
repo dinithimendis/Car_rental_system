@@ -53,6 +53,9 @@ function setBookingCunt() {
     });
 }
 
+getAllDrivers();
+
+
 function getAllDrivers() {
     $("#driverTableBody").empty();
     $.ajax({
