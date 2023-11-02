@@ -419,3 +419,21 @@ function searchByPassengerCount() {
         }
     });
 }
+
+function searchByFuelType() {
+    $("#vehicleTableBody").empty();
+
+    $.ajax({
+        url: baseURL + "searching/?fuel_type=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                vehicleSearchManager(c);
+            }
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+}
