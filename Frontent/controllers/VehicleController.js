@@ -491,3 +491,20 @@ function searchByTransMissionType() {
         }
     });
 }
+
+function searchByRate() {
+    $("#vehicleTableBody").empty();
+    $.ajax({
+        url: baseURL + "searching/?dailyRate=" + $("#vehicleSearch").val() + "&monthlyRate=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                vehicleSearchManager(c);
+            }
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+}
