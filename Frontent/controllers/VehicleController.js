@@ -455,3 +455,21 @@ function searchByBrand() {
         }
     });
 }
+
+function searchByType() {
+    $("#vehicleTableBody").empty();
+
+    $.ajax({
+        url: baseURL + "searching/?type=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                vehicleSearchManager(c);
+            }
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+}
