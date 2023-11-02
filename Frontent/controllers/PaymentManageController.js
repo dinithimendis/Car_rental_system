@@ -36,6 +36,8 @@ $("#save").on('click', function () {
     });
 });
 
+loadAllCustomersToCombo();
+
 function loadAllCustomersToCombo() {
     $.ajax({
         url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
@@ -48,3 +50,20 @@ function loadAllCustomersToCombo() {
         }
     });
 }
+
+$('#bookingId').on('click', function () {
+    $.ajax({
+        url: baseURL + "/payment/get_all_bookings", method: "GET", dataType: "json", success: function (res) {
+            for (let booking of res.data) {
+                if (booking.bookingID === $('#bookingId').val()) {
+                    $("#driver_req").val(booking.driverRequestType);
+                    $("#pick_up_date").val(booking.pickUpDate);
+                    $("#pick_up_location").val(booking.pickUpLocation);
+                    $("#pickup_time").val(booking.pickUpTime);
+                    $("#return_date").val(booking.returnDate);
+                    $("#customer_id").val(booking.customer.id);
+                }
+            }
+        }
+    });
+});
