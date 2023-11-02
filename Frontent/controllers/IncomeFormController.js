@@ -22,6 +22,9 @@ function getAllByDailyRevenues() {
     });
 }
 
+
+
+
 function getAllByMonthlyRevenues() {
     $.ajax({
         url: baseURL + "income/by_month", dataType: "json", success: function (res) {
@@ -56,6 +59,25 @@ function getAllByMonthlyRevenues() {
                 $("#incomeReportsMonthlyTable").append(row);
 
             }
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
+
+function gettingRevenueByYear() {
+    $("#todayDate").val(new Date().getFullYear() + " / " + new Date().getMonth() + " / " + new Date().getDate() + "   "
+        + new Date().getHours() + " : " + new Date().getMinutes() + " : " + new Date().getSeconds());
+
+    $.ajax({
+        url: baseURL + "income/by_year", dataType: "json", success: function (res) {
+            console.log(res.data);
+            for (let c of res.data) {
+                let id = c;
+                $("#revenueByYear").val("Rs " + id + ".00");
+            }
+
         }, error: function (error) {
             let message = JSON.parse(error.responseText).message;
             alert(message);
