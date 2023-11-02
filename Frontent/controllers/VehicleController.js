@@ -401,3 +401,21 @@ $("#search").on('click', function () {
         alert("fuck u idiot !");
     }
 });
+
+function searchByPassengerCount() {
+    $("#vehicleTableBody").empty();
+
+    $.ajax({
+        url: baseURL + "searching/?no_of_passengers=" + $("#vehicleSearch").val(),
+        method: "GET",
+        dataType: "json",
+        success: function (resp) {
+            for (let c of resp.data) {
+                vehicleSearchManager(c);
+            }
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+}
