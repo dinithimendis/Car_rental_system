@@ -145,3 +145,83 @@ $("#deleteDriver").on('click', function () {
         }
     });
 });
+
+$("#updateDriver").on('click', function () {
+
+    let id = $('#id').val();
+    let address = $('#address').val();
+    let contactNo = $('#contactNo').val();
+    let driverAvailability = $('#driverAvailability').val();
+    let drivingLicenseNo = $('#drivingLicenseNo').val();
+    let email = $('#email').val();
+    let firstName = $('#firstName').val();
+    let lastName = $('#lastName').val();
+    let userName = $('#userName').val();
+    let userId = $('#userId').val();
+    let password = $('#password').val();
+    let nic = $('#nic').val();
+    let role = $('#role').val();
+
+    var driver = {
+        id: id,
+        address: address,
+        contactNo: contactNo,
+        driverAvailability: driverAvailability,
+        drivingLicenseNo: drivingLicenseNo,
+        email: email,
+        name: {firstName: firstName, lastName: lastName},
+        user: {userId: userId, userName: userName, password: password, role: role},
+        nic: nic,
+    }
+
+    $.ajax({
+        url: baseURL + "update",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(driver),
+        dataType: "json",
+        success: function (res) {
+            getAllDrivers();
+            // alert(res.message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#27ae60',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Updated successfully !'
+            });
+        },
+        error: function (error) {
+            // alert(JSON.parse(error.responseText).message);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                background:'#e70c0c',
+                showConfirmButton: false,
+                color: "#fff",
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Update unsuccessful !'
+            });
+        }
+    });
+});
