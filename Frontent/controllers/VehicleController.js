@@ -225,3 +225,23 @@ function bindRowClickEventsForVehicle() {
         $('#lastServiceMileage').val($(this).children(":eq(16)").text());
     });
 }
+
+function clearTextFields(){
+    $("#vehicleId").val("");
+    $("#numberOfPassenger").val("");
+    $("#extraKmPer").val("");
+    $("#registrationNo").val("");
+    $("#vehicleColour").val("");
+    $("#dailyRate").val("");
+    $("#monthlyRate").val("");
+    $("#vehicleAvailability").val("");
+    $("#vehicleBrand").val("");
+    $("#transmissionType").val("");
+    $("#dailyMileage").val("");
+    $("#monthlyMileage").val("");
+    $("#fuelType").val("");
+    $("#refundableDamagedFee").val("");
+    $("#vehicleType").val("");
+    $("#dailyMileage1").val("");
+    $("#lastServiceMileage").val("");
+}
