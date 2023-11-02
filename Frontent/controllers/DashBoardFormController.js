@@ -17,3 +17,14 @@ function setUserCount() {
     });
 }
 
+function setCarQuantity() {
+    $.ajax({
+        url: baseURL + "/vehicle/vehicleCount/{count}", method: "GET", dataType: "json", success: function (res) {
+            console.log(res.data);
+            $("#lbl3").text(res.data);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
