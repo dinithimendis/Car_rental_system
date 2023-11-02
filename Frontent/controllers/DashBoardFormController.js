@@ -28,3 +28,15 @@ function setCarQuantity() {
         }
     });
 }
+
+function setDriversCount() {
+    $.ajax({
+        url: baseURL + "/driver/driverCount/{count}", method: "GET", dataType: "json", success: function (res) {
+            console.log(res.data);
+            $("#lbl4").text(res.data);
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
