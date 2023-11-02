@@ -101,3 +101,15 @@ function getAllVehicle() {
     });
     genarateVehicleID();
 }
+
+function genarateVehicleID() {
+    $.ajax({
+        url: baseURL + "vehicle/?test=", success: function (res) {
+            $('#vehicleId').val(res.data);
+            genaratedVehicleValue = res.data;
+        }, error: function (error) {
+            let message = JSON.parse(error.responseText).message;
+            alert(message);
+        }
+    });
+}
